@@ -12,4 +12,14 @@ public class InitialBootAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InitialBootAppApplication.class, args);
 	}
+
+	@RestController
+	@RequestMapping("/api")
+	public class ApiController{
+		@GetMapping("/greeting")
+		public String getGreeting(){
+			return "Hello World from the API";
+		}
+	}
+
 }
